@@ -9,6 +9,11 @@ class Doctor extends Model
 {
     use HasFactory;
 
+    public function Usuarios()
+    {
+        return $this->belongsTo(Usuario::class);
+    }
+
     public function Especialidades()
     {
         return $this->belongsTo(Especialidad::class);

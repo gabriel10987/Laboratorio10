@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('edad')->nullable();
             $table->string('condicion');
             $table->unsignedBigInteger('paciente_id');
-            $table->foreign('paciente_id')->references('id')->on('pacientes');
+            $table->foreign('paciente_id')->references('dni')->on('pacientes');
             $table->unsignedBigInteger('doctor_id');
             $table->foreign('doctor_id')->references('id')->on('doctores');
             $table->unsignedBigInteger('diagnostico_id');

@@ -12,15 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pacientes', function (Blueprint $table) {
-            $table->id();
+            $table->string('dni')->primary();
             $table->string('nombres');
             $table->string('apellidos');
-            $table->string('dni');
             $table->string('telefono');
             $table->string('direccion');
             $table->string('email');
             $table->date('fecha_nacimiento');
             $table->string('contraseña');
+            $table->unsignedBigInteger('usuario_id');
+            $table->foreign('usuario_id')->references('username')->on('usuarios');
             $table->timestamps();
         });
     }
